@@ -1,0 +1,18 @@
+<form id="login-form" hx-post="login.php" hx-swap="outerHTML">
+    <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input name="username" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <div class="input-group">
+            <input name="password" type="password" class="form-control" id="login-password-frag" required>
+            <button class="btn btn-outline-secondary password-toggle" type="button"
+                onclick="togglePassword('login-password-frag', this)">
+                <i class="bi bi-eye"></i>
+            </button>
+        </div>
+    </div>
+    <div id="login-feedback"></div>
+    <button class="btn btn-primary">Login</button>
+</form>

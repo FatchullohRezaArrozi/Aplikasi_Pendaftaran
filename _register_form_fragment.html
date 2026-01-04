@@ -1,0 +1,47 @@
+<form id="register-form" hx-post="register.php" hx-target="#register-form" hx-swap="outerHTML">
+    <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input name="username" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input name="password" type="password" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Nama Lengkap</label>
+        <input name="namalengkap" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Daftar Sebagai</label>
+        <select name="role" class="form-select"
+            onchange="document.getElementById('nim-container').style.display = this.value === 'mahasiswa' ? 'block' : 'none'">
+            <option value="user">Umum</option>
+            <option value="mahasiswa">Mahasiswa</option>
+        </select>
+    </div>
+
+    <div class="mb-3" id="nim-container" style="display: none;">
+        <div class="mb-3">
+            <label class="form-label">NIM (Wajib untuk Mahasiswa)</label>
+            <input name="nim" class="form-control" placeholder="Masukkan NIM Anda">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Jurusan</label>
+            <select name="jurusan" class="form-select">
+                <option value="">Pilih Jurusan...</option>
+                <option value="Teknik Informatika">Teknik Informatika</option>
+                <option value="Sistem Informasi">Sistem Informasi</option>
+                <option value="Manajemen Informatika">Manajemen Informatika</option>
+                <option value="Komputerisasi Akuntansi">Komputerisasi Akuntansi</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Angkatan</label>
+            <input name="angkatan" type="number" class="form-control" placeholder="Tahun Masuk (contoh: 2023)">
+        </div>
+    </div>
+
+    <div id="register-feedback"></div>
+    <button class="btn btn-success">Buat Akun</button>
+</form>
